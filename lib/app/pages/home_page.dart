@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fokus/app/enums/timer_type.dart';
+import 'package:fokus/app/pages/timer_page.dart';
 import '../utils/app_config.dart';
 
 class HomePage extends StatelessWidget {
@@ -15,9 +17,13 @@ class HomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(AppConfig.logoImage, height: 80),
+
               const SizedBox(height: 24),
+
               Expanded(child: Image.asset(AppConfig.homeImage)),
+
               const SizedBox(height: 40),
+
               Column(
                 children: [
                   SizedBox(
@@ -25,7 +31,14 @@ class HomePage extends StatelessWidget {
                     height: 56,
                     child: ElevatedButton(
                       onPressed: () {
-                        // TODO: Implementar modo foco
+                        // Navegar para a página do timer em modo foco EXERCICIO
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                TimerPage(timerType: TimerType.focus),
+                          ),
+                        );
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppConfig.buttonColor,
@@ -34,6 +47,7 @@ class HomePage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(15),
                         ),
                       ),
+
                       child: const Text(
                         'Modo Foco',
                         style: TextStyle(
@@ -44,13 +58,23 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                   ),
+
                   const SizedBox(height: 16),
+
                   SizedBox(
                     width: double.infinity,
                     height: 56,
+
                     child: ElevatedButton(
                       onPressed: () {
-                        // TODO: Implementar pausa curta
+                        // Navegar para a página do timer em modo pausa curta EXERCICIO
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (builderContext) =>
+                                TimerPage(timerType: TimerType.shortBreak),
+                          ),
+                        );
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppConfig.buttonColor,
@@ -69,13 +93,22 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                   ),
+
                   const SizedBox(height: 16),
+
                   SizedBox(
                     width: double.infinity,
                     height: 56,
                     child: ElevatedButton(
                       onPressed: () {
-                        // TODO: Implementar pausa longa
+                        // Navegar para a página do timer em modo pausa longa EXERCICIO
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (builderContext) =>
+                                TimerPage(timerType: TimerType.longBreak),
+                          ),
+                        );
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppConfig.buttonColor,
@@ -96,7 +129,9 @@ class HomePage extends StatelessWidget {
                   ),
                 ],
               ),
+
               const SizedBox(height: 32),
+
               Text(
                 AppConfig.footerText,
                 textAlign: TextAlign.center,
