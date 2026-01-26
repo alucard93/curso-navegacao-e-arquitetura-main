@@ -12,18 +12,22 @@ class TimerPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppConfig.backgroundColor,
+
       appBar: AppBar(
         backgroundColor: AppConfig.backgroundColor,
         elevation: 0,
         toolbarHeight: 56,
       ),
+
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(24.0),
           child: Column(
             children: [
               const SizedBox(height: 24),
+
               Expanded(child: Image.asset(timerType.imageName)),
+
               Text(
                 timerType.title,
                 style: TextStyle(
@@ -32,10 +36,13 @@ class TimerPage extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
+
               const SizedBox(height: 40),
               // Widget de timer
               TimerWidget(initialMinutes: timerType.minutes),
+
               const SizedBox(height: 32),
+
               Text(
                 AppConfig.footerText,
                 textAlign: TextAlign.center,
