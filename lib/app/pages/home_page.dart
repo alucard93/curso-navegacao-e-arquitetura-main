@@ -32,12 +32,10 @@ class HomePage extends StatelessWidget {
                     child: ElevatedButton(
                       onPressed: () {
                         // Navegar para a página do timer em modo foco EXERCICIO
-                        Navigator.push(
+                        Navigator.pushNamed(
                           context,
-                          MaterialPageRoute(
-                            builder: (context) =>
-                                TimerPage(timerType: TimerType.focus),
-                          ),
+                          '/timer',
+                          arguments: TimerType.focus,
                         );
                       },
                       style: ElevatedButton.styleFrom(
@@ -68,12 +66,10 @@ class HomePage extends StatelessWidget {
                     child: ElevatedButton(
                       onPressed: () {
                         // Navegar para a página do timer em modo pausa curta EXERCICIO
-                        Navigator.push(
+                        Navigator.pushNamed(
                           context,
-                          MaterialPageRoute(
-                            builder: (builderContext) =>
-                                TimerPage(timerType: TimerType.shortBreak),
-                          ),
+                          '/timer',
+                          arguments: TimerType.shortBreak,
                         );
                       },
                       style: ElevatedButton.styleFrom(
@@ -102,12 +98,11 @@ class HomePage extends StatelessWidget {
                     child: ElevatedButton(
                       onPressed: () {
                         // Navegar para a página do timer em modo pausa longa EXERCICIO
-                        Navigator.push(
+
+                        Navigator.pushNamed(
                           context,
-                          MaterialPageRoute(
-                            builder: (builderContext) =>
-                                TimerPage(timerType: TimerType.longBreak),
-                          ),
+                          '/timer',
+                          arguments: TimerType.longBreak,
                         );
                       },
                       style: ElevatedButton.styleFrom(
