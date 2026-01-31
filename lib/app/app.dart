@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fokus/app/enums/timer_type.dart';
-import 'package:fokus/app/pages/home_page.dart';
-import 'package:fokus/app/pages/timer_page.dart';
+import 'package:fokus/app/shared/enums/timer_type.dart';
+import 'package:fokus/app/view/pages/home_page.dart';
+import 'package:fokus/app/view/pages/timer_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class App extends StatelessWidget {
